@@ -84,16 +84,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 }, icon: const Icon(Icons.person_2_outlined))
               ],
             ),
-
-            floatingActionButton: Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: FloatingActionButton(
-                onPressed: () async {
-                  await APIS.auth.signOut();
-                  await GoogleSignIn().signOut();
-              },
-                  child: const Icon(Icons.add_comment_rounded),),
-            ),
             //body
             body: StreamBuilder(
               stream: APIS.getAllUsers(),
